@@ -4,6 +4,21 @@ class node:
         self.right = None
         self.left = None
 
+def DFS(root):
+    stack = [root]
+
+
+    while len(stack) > 0:
+        current = stack.pop()
+        print(current.val)
+        if(current.left):
+            stack.append(current.left)
+            
+        if(current.right):
+            stack.append(current.right)
+
+
+
     
 
 a = node('a')
@@ -17,3 +32,4 @@ a.right = c
 b.left = d
 b.right = e
 
+DFS(a)
