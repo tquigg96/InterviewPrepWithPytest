@@ -30,7 +30,23 @@ def BFS(root):
             queue.append(current.right)
 
 
+def find(root, target):
+    stack = [root]
+   
 
+    while len(stack) > 0:
+        current = stack.pop()
+        if(current.val == target):
+            return True
+        
+
+        if(current.left):
+            stack.append(current.left)
+            
+        if(current.right):
+            stack.append(current.right)
+    return False
+    
     
 
 a = node('a')
@@ -44,8 +60,11 @@ a.right = c
 b.left = d
 b.right = e
 
-print("\n Depth First Search: \n" )
+print("\nDepth First Search: \n" )
 DFS(a)
-print("\n Breadth First Search: \n")
+print("\nBreadth First Search: \n")
 BFS(a)
+print("\nfind value using depth first \n")
+check = find(a, 'e')
+print(str(check) + "\n")
 
