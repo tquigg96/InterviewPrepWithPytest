@@ -4,7 +4,7 @@ class node:
         self.right = None
         self.left = None
 
-def DFS(root):
+def DFS(root): #do I need a visited?
     stack = [root]
 
 
@@ -16,6 +16,18 @@ def DFS(root):
             
         if(current.right):
             stack.append(current.right)
+
+def BFS(root):
+    queue = [root]
+
+    while(len(queue) > 0):
+        current = queue.pop(0)
+        print(current.val)
+
+        if(current.left):
+            queue.append(current.left)
+        if (current.right):
+            queue.append(current.right)
 
 
 
@@ -32,4 +44,8 @@ a.right = c
 b.left = d
 b.right = e
 
+print("\n Depth First Search: \n" )
 DFS(a)
+print("\n Breadth First Search: \n")
+BFS(a)
+
