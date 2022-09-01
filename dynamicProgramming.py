@@ -1,5 +1,4 @@
 
-#this approach adopts a binary search in the mix
 def threeSome(target, nums):
     sumVals = []
     nums.sort()
@@ -54,11 +53,23 @@ def threeSumAll(target, nums):
 
     return sumVals
 
+
+def firstMissingPositive(nums):
+    s=set(nums)
+    for i in range(1,len(nums)+2):
+        if i not in s:
+            return i
+
+
+        
 #O(nLogn) + O(n^2)
 vals = [1, 0, -1, 2, -2, 0]
 
-sumVals = threeSome(0, vals) # this one finds the first solution it finds then returns it
+sumVals = threeSome(0, vals) # this one finds the first solution it finds then returns it and is buggy lets improve it
 newSumVals = threeSumAll(0, vals)
+value = firstMissingPositive(vals)
+
 print(sumVals)
 print(newSumVals)
+print(value)
 
