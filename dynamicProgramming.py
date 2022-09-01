@@ -24,9 +24,41 @@ def threeSome(target, nums):
 
     return sumVals
 
+#improved with no duplicates, all solutions
+def threeSumAll(target, nums):
+    sumVals = []
+    nums.sort()
 
-vals = [1, 0, 1, 2, -2, 0]
+    if len(nums) < 3:
+        return []
 
-sumVals = threeSome(0, vals)
+    for i,a in enumerate(nums):
+        left = i+1
+        right = len(nums) -1
+        if i > 0 and a == nums[i-1]:
+            continue
 
+        while( left < right):
+            if (nums[i] + nums[left] + nums[right] == target):
+                sumVals.append([nums[i], nums[left], nums[right]])
+                left += 1
+                while nums[left] == nums [left-1] and left < right:
+                    left += 1
+
+                
+            elif(nums[i] + nums[left] + nums [right] < target):
+                left += 1
+
+            else:
+                right -= 1
+
+    return sumVals
+
+#O(nLogn) + O(n^2)
+vals = [1, 0, -1, 2, -2, 0]
+
+sumVals = threeSome(0, vals) # this one finds the first solution it finds then returns it
+newSumVals = threeSumAll(0, vals)
 print(sumVals)
+print(newSumVals)
+
