@@ -1,4 +1,4 @@
-def search(nums, target):
+def binarySearch(nums, target):
 
     nums.sort()
     
@@ -24,9 +24,12 @@ def search(nums, target):
     return False
 
 
+def searchRotatedArray(nums, target):
+    pass
+
 nums = [4,5,6,7,0,1,2]
 
-val = search(nums, 1)
+val = binarySearch(nums, 1)
 print(val)
 
     
