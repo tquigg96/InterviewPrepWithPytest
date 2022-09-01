@@ -23,7 +23,7 @@ def binarySearch(nums, target):
                         
     return False
     
-def binarySearch(nums, target):
+def searchInsert(nums, target):
 
     nums.sort()
     
@@ -42,7 +42,7 @@ def binarySearch(nums, target):
             elif nums[mid] < target:
                 left = mid + 1            
                         
-    return len(nums)
+    return left
 
 
 def searchRotatedArray(nums, target):
