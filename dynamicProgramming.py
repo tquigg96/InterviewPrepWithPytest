@@ -53,7 +53,7 @@ def threeSumAll(target, nums):
 
     return sumVals
 
-
+#O(logn)
 def firstMissingPositive(nums):
     s=set(nums)
     for i in range(1,len(nums)+2):

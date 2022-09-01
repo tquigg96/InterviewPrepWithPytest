@@ -22,10 +22,31 @@ def binarySearch(nums, target):
                 left = mid + 1            
                         
     return False
+    
+def binarySearch(nums, target):
+
+    nums.sort()
+    
+    right = len(nums) - 1
+    left = 0
+        
+
+    while(left <= right):
+        if right >= left:
+            mid = left + (right-left) //2 #half it
+
+            if nums[mid] == target:
+                return mid
+            elif nums[mid] > target:
+                right = mid - 1
+            elif nums[mid] < target:
+                left = mid + 1            
+                        
+    return len(nums)
 
 
 def searchRotatedArray(nums, target):
-    pass
+    pass 
 
 nums = [4,5,6,7,0,1,2]
 
