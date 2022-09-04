@@ -60,16 +60,34 @@ def firstMissingPositive(nums):
         if i not in s:
             return i
 
+def minCoins(coins, amount):
+    dp = [float('inf') for _ in range(amount + 1)]
+    dp[0] = 0
 
+    for i in range(0,len(dp)):
+        
+        for c in coins:
+            #print('i' + str(i) + 'coins' + str(c))
+            if i-c >= 0:
+              
+                dp[i] = min(dp[i], dp[i-c]+1)
+            #print(dp)
+    
+    return -1 if dp[-1] == float('inf') else dp[-1]
+
+    
         
 #O(nLogn) + O(n^2)
 vals = [1, 0, -1, 2, -2, 0]
+coins = [1,3,5]
 
 sumVals = threeSome(0, vals) # this one finds the first solution it finds then returns it and is buggy lets improve it
 newSumVals = threeSumAll(0, vals)
 value = firstMissingPositive(vals)
+coins = minCoins(coins, 11)
 
 print(sumVals)
 print(newSumVals)
 print(value)
+print(coins)
 
