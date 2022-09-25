@@ -8,15 +8,24 @@ class Graph:
     def addEdge(self,a, b):
         self.graph[a].append(b)
 
-    def BFS(self, start):
+    def DFS(graph, start, stack):
 
-        visited = []
+        stack.append(start)
+        
+        while (len(stack) > 0):
+            current = stack.pop()
+            print(current)
 
-        queue = []
+            for neighbor in graph[current]:
+                stack.push(neighbor)
 
-        queue.append(start)
+    def BFS(self, start, visited):
+
+        if start in visited:
+            return True
+
         visited.append(start)
 
-        while queue:
-            start = queue.pop()
-            
+        for neighbor in self.graph[start]:
+            if neighbor not in visited:
+                visited.append(start)
