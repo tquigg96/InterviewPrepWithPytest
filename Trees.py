@@ -49,22 +49,10 @@ def find(root, target):
     
     
 
-a = node('a')
-b = node('b')
-c = node('c')
-d = node('d')
-e = node('e')
 
-a.left = b
-a.right = c
-b.left = d
-b.right = e
 
-print("\nDepth First Search: \n" )
-DFS(a)
-print("\nBreadth First Search: \n")
-BFS(a)
-print("\nfind value using depth first \n")
-check = find(a, 'e')
-print(str(check) + "\n")
+char = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+new = [c.upper() for c in char]
+print(new)
 
+    
